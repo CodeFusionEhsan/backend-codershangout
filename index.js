@@ -780,3 +780,7 @@ app.post('/ai/code/generate', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.listen(port, () => {
+    console.log("Server Running On Port " + port)
+})
