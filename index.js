@@ -152,7 +152,7 @@ app.post('/get/user/snippets', async (req, res) => {
         const snippets = await Snippet.find()
 
         function check(snippet) {
-            return snippet.uploaded_by.user_id = id
+            return snippet.uploaded_by.user_id == id
         }
 
         const result = snippets.filter(check)
@@ -362,7 +362,7 @@ app.post('/get/user/blogs', async (req, res) => {
         const blogs = await Blog.find()
 
         function check(blog) {
-            return blog.uploaded_by.user_id = id
+            return blog.uploaded_by.user_id == id
         }
 
         const result = blogs.filter(check)
